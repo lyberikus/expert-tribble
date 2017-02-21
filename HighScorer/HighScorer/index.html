@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
 <html ng-app="highscorerApp">
 <head>
-    <title></title>
+    <base href="/index.html">
+    <title>Highscorer</title>
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="Content/ui-bootstrap-csp.css" />
@@ -16,12 +17,10 @@
     <script type="text/javascript" src="/app/index.controller.js"></script>
     
 </head>
-<body ng-controller="IndexController as vm">
-    <ul>
-        <li ng-repeat="game in vm.playableGames">
-            <a href="{{game.Link}}">{{game.Name}}</a>
-        </li>
-    </ul>
+<body>
+    <div ng-view>
+
+    </div>
 </body> 
 </html>
 

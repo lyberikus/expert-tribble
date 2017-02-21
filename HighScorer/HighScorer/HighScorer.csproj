@@ -38,6 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -112,8 +120,10 @@
   <ItemGroup>
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
+    <Content Include="app\bowling\bowling.html" />
     <Content Include="app\index.controller.js" />
     <Content Include="app\start.service.js" />
+    <Content Include="app\start\start.html" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-animate.js" />
@@ -879,12 +889,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\GameContext.cs" />
+    <Compile Include="Backend\Models\Game.cs" />
+    <Compile Include="Backend\Models\GameSession.cs" />
+    <Compile Include="Backend\Models\Link.cs" />
+    <Compile Include="Backend\Models\Player.cs" />
     <Compile Include="Controllers\StartController.cs" />
+    <Compile Include="Migrations\201702212251537_Base.cs" />
+    <Compile Include="Migrations\201702212251537_Base.Designer.cs">
+      <DependentUpon>201702212251537_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702212304322_Base2.cs" />
+    <Compile Include="Migrations\201702212304322_Base2.Designer.cs">
+      <DependentUpon>201702212304322_Base2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\PlayableGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup1.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702212251537_Base.resx">
+      <DependentUpon>201702212251537_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702212304322_Base2.resx">
+      <DependentUpon>201702212304322_Base2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

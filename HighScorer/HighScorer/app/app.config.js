@@ -2,15 +2,15 @@
   module('highscorerApp').
   config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
-        //$locationProvider.hashPrefix('!');
+        $locationProvider.html5Mode(true)
 
-        //$routeProvider.
-        //  when('/phones', {
-        //      template: '<phone-list></phone-list>'
-        //  }).
-        //  when('/phones/:phoneId', {
-        //      template: '<phone-detail></phone-detail>'
-        //  }).
-        //  otherwise('/phones');
+        $routeProvider
+            .when('/', {
+                templateUrl: "app/start/start.html",
+                controller: "IndexController as vm"
+            })
+            .when("/bowling", {
+                templateUrl: "app/bowling/bowling.html"
+            })
     }
   ]);

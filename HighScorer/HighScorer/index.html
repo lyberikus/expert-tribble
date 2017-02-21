@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="highscorerApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="Content/ui-bootstrap-csp.css" />
+    <script type="text/javascript" src="/Scripts/angular.js"></script>
+    <script type="text/javascript" src="/Scripts/angular-route.js"></script>
+    <script type="text/javascript" src="/Scripts/angular-resource.js"></script>
+    <script type="text/javascript" src="/Scripts/angular-ui/ui-bootstrap.js"></script>
+
+    <script type="text/javascript" src="/app/app.module.js"></script>
+    <script type="text/javascript" src="/app/app.config.js"></script>
+    <script type="text/javascript" src="/app/start.service.js"></script>
+    <script type="text/javascript" src="/app/index.controller.js"></script>
+    
+</head>
+<body ng-controller="IndexController as vm">
+    <ul>
+        <li ng-repeat="game in vm.playableGames">
+            <a href="{{game.Link}}">{{game.Name}}</a>
+        </li>
+    </ul>
+</body> 
+</html>
+
